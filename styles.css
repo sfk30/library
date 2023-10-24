@@ -3,3 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.book-card { 
+    height: 500px;
+    width: 500px;
+    white-space: pre;
+}

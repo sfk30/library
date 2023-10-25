@@ -1,10 +1,11 @@
-* { 
+*, *:before, *:after { 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Inter, sans-serif;
     --blue-color: #164e63;
+    box-sizing: border-box;
 }
+
 
 .container { 
     min-height: 100vh;
@@ -60,4 +61,65 @@ button > svg{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Dialog */
+
+dialog[open] { 
+    height: 400px;
+    width: 350px;
+    margin: auto;
+    border: 5px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px var(--blue-color);
+}
+
+dialog[open] form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+dialog[open] [type="text"], dialog[open] [type="number"] {
+    height: 25px;
+    padding: 5px;
+    width: 285px;
+}
+
+dialog[open] #sub-btn {
+    background-color: #166534;
+    color: white;
+    height: 30px;
+    width: 290px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid #166534;
+}
+
+
+dialog[open] #cancel-btn {
+    background-color: #f00f1e;
+    color: white;
+    height: 30px;
+    width: 290px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+dialog[open] button:focus { 
+    outline: 1px solid black;
+}
+
+
+dialog[open] [for="user-read"] {
+    display: flex;
+    gap: 30px;
+    font-weight: 500;
+}
+
+dialog[open] .new-book { 
+    font-size: 28px;
+    font-weight: bold;
 }

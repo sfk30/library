@@ -5,7 +5,6 @@ const submitBtn = document.getElementById('sub-btn')
 const cancelBtn = document.getElementById('cancel-btn')
 const booksForm = document.getElementById('books-form')
 
-
 addBook.addEventListener('click', () => {
   dialog.showModal()
 })
@@ -24,7 +23,8 @@ dialog.addEventListener('click', (e) => {
   }
 })
 
-const myLibrary = [];
+
+var myLibrary = [];
 
 function Book(title, author, pages, read) {
   this.title = title
@@ -55,7 +55,7 @@ function displayBook() {
   const currentBook = myLibrary[0]
 
   const card = document.createElement('div')
-  card.setAttribute('id', 'card')
+  card.setAttribute('class', 'card')
 
   var title = document.createElement('p')
   title.setAttribute('class', 'title')
@@ -77,13 +77,24 @@ function displayBook() {
   read.textContent = 'Read:' + ' ' + currentBook.read
   console.log(read.textContent)
 
+  const deleteBtn = document.createElement('button')
+  deleteBtn.setAttribute('class', 'delete-btn')
+  deleteBtn.textContent = 'Delete'
+
   card.appendChild(title)
   card.appendChild(author)
   card.appendChild(pages)
   card.appendChild(read)
+  card.appendChild(deleteBtn)
   cardsBody.appendChild(card)
 
   myLibrary.shift()
+
+  deleteBtn.addEventListener('click', () => {
+    cardsBody.removeChild(card)
+      
+  })
+
 }
 
 

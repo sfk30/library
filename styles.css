@@ -92,12 +92,6 @@ button > svg{
     cursor: pointer;
 }
 
-/* .card > svg {
-    height: 20px;
-    width: 20px;
-    grid-row: 5 / 6;
-} */
-
 /* Dialog */
 
 dialog[open] { 

@@ -5,25 +5,6 @@ const submitBtn = document.getElementById('sub-btn')
 const cancelBtn = document.getElementById('cancel-btn')
 const booksForm = document.getElementById('books-form')
 
-addBook.addEventListener('click', () => {
-  dialog.showModal()
-})
-
-
-dialog.addEventListener('click', (e) => {
-  const dialogDimensions = dialog.getBoundingClientRect()
-  if (
-    e.clientX < dialogDimensions.left ||
-    e.clientX > dialogDimensions.right ||
-    e.clientY < dialogDimensions.top ||
-    e.clientY > dialogDimensions.bottom
-  ) {
-    booksForm.reset()
-    dialog.close()
-  }
-})
-
-
 var myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -114,6 +95,24 @@ function displayBook() {
 
 }
 
+addBook.addEventListener('click', () => {
+  dialog.showModal()
+})
+
+
+dialog.addEventListener('click', (e) => {
+  const dialogDimensions = dialog.getBoundingClientRect()
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    booksForm.reset()
+    dialog.close()
+  }
+})
+
 booksForm.addEventListener('submit', (e) => {
   e.preventDefault()
   addBookToLibrary()
@@ -127,4 +126,3 @@ cancelBtn.addEventListener('click', () => {
   booksForm.reset()
   dialog.close()
 })
-

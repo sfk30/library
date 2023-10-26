@@ -40,22 +40,18 @@ function displayBook() {
   var title = document.createElement('p')
   title.setAttribute('class', 'title')
   title.textContent = 'Title:' + ' ' + currentBook.title
-  console.log(title.textContent)
 
   var author = document.createElement('p')
   author.setAttribute('class', 'author')
   author.textContent = 'Author:' + ' ' + currentBook.author
-  console.log(author.textContent)
 
   var pages = document.createElement('p')
   pages.setAttribute('class', 'pages')
   pages.textContent = 'Pages:' + ' ' + currentBook.pages
-  console.log(pages.textContent)
 
   var read = document.createElement('button')
   read.setAttribute('class', 'read')
   read.textContent = currentBook.read
-  console.log(read.textContent)
 
   if (isRead() === 'Read') {
     read.classList.toggle('yes')

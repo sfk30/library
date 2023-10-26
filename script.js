@@ -35,9 +35,9 @@ function Book(title, author, pages, read) {
 
 function isRead() {
   if (document.getElementById('user-read').checked) {
-    return true
+    return 'Read'
   } 
-  return false
+  return 'Not read'
 }
 
 function addBookToLibrary() {
@@ -48,7 +48,6 @@ function addBookToLibrary() {
   var newBook = new Book(title, author, pages, read)
   myLibrary.push(newBook)
 }
-
 
 
 function displayBook() {
@@ -72,10 +71,28 @@ function displayBook() {
   pages.textContent = 'Pages:' + ' ' + currentBook.pages
   console.log(pages.textContent)
 
-  var read = document.createElement('p')
+  var read = document.createElement('button')
   read.setAttribute('class', 'read')
-  read.textContent = 'Read:' + ' ' + currentBook.read
+  read.textContent = currentBook.read
   console.log(read.textContent)
+
+  if (isRead() === 'Read') {
+    read.classList.toggle('yes')
+  } else {
+    read.classList.toggle('no')
+  }
+
+  read.addEventListener('click', () => {
+    if (read.textContent === 'Read') {
+      read.classList.toggle('yes')
+      read.classList.toggle('no')
+      read.textContent = 'Not read'
+    } else if (read.textContent === 'Not read') {
+      read.classList.toggle('yes')
+      read.classList.toggle('no')
+      read.textContent = 'Read'
+    }
+  })
 
   const deleteBtn = document.createElement('button')
   deleteBtn.setAttribute('class', 'delete-btn')
@@ -96,7 +113,6 @@ function displayBook() {
   })
 
 }
-
 
 booksForm.addEventListener('submit', (e) => {
   e.preventDefault()

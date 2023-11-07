@@ -7,11 +7,20 @@ const booksForm = document.getElementById('books-form')
 
 var myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = isRead()
+// function Book(title, author, pages, read) {
+//   this.title = title
+//   this.author = author
+//   this.pages = pages
+//   this.read = isRead()
+// }
+
+class Book { 
+  constructor(title, author, pages, read) {
+    this._title = title
+    this._author = author
+    this._pages = pages
+    this._read = isRead()
+  }
 }
 
 function isRead() {
@@ -39,19 +48,19 @@ function displayBook() {
 
   var title = document.createElement('p')
   title.setAttribute('class', 'title')
-  title.textContent = 'Title:' + ' ' + currentBook.title
+  title.textContent = 'Title:' + ' ' + currentBook._title
 
   var author = document.createElement('p')
   author.setAttribute('class', 'author')
-  author.textContent = 'Author:' + ' ' + currentBook.author
+  author.textContent = 'Author:' + ' ' + currentBook._author
 
   var pages = document.createElement('p')
   pages.setAttribute('class', 'pages')
-  pages.textContent = 'Pages:' + ' ' + currentBook.pages
+  pages.textContent = 'Pages:' + ' ' + currentBook._pages
 
   var read = document.createElement('button')
   read.setAttribute('class', 'read')
-  read.textContent = currentBook.read
+  read.textContent = currentBook._read
 
   if (isRead() === 'Read') {
     read.classList.toggle('yes')

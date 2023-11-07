@@ -91,6 +91,8 @@ function displayBook() {
 
 }
 
+// Dialog JS
+
 addBook.addEventListener('click', () => {
   dialog.showModal()
 })

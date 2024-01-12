@@ -1,154 +1,161 @@
-*, *:before, *:after { 
-    margin: 0;
-    padding: 0;
-    font-family: Inter, sans-serif;
-    --blue-color: #164e63;
-    --red-color: #f00f1e;
-    --green-color: #166534;
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  --blue-color: #164e63;
+  --red-color: #f00f1e;
+  --green-color: #166534;
+  box-sizing: border-box;
 }
 
-
-.container { 
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr;
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
-.header { 
-    font-size: 28px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    background-color: var(--blue-color);
-    color: white;
-    border-bottom: 5px solid black;
+.header {
+  font-size: 28px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: var(--blue-color);
+  color: white;
+  border-bottom: 5px solid black;
 }
 
-#add { 
-    height: 40px;
-    width: 40px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 50px;
-    cursor: pointer;
+#add {
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-button > svg{
-    height: 35px;
-    width: 35px;
-    fill: white;
+button > svg {
+  height: 35px;
+  width: 35px;
+  fill: white;
 }
 
-#card-body { 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 20px;
-    gap: 50px;
+#card-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 20px;
+  gap: 50px;
 }
 
-.card { 
-    justify-self: center;
-    padding: 10px;
-    height: 200px;
-    width: 300px;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    gap: 5px;
-    border: 5px solid black;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 10px 10px 8px var(--blue-color);
+.card {
+  justify-self: center;
+  padding: 10px;
+  height: 200px;
+  width: 300px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px var(--blue-color);
 }
 
-.title, .author, .pages, .read { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title,
+.author,
+.pages,
+.read {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .read {
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 }
 
-.yes { 
-    background-color: hotpink;
-    color: white;
-    cursor: pointer;
+.yes {
+  background-color: hotpink;
+  color: white;
+  cursor: pointer;
 }
 
 .no {
-    background-color: rgb(122, 199, 224);
-    color: white;
-    cursor: pointer;
+  background-color: rgb(122, 199, 224);
+  color: white;
+  cursor: pointer;
 }
 
-
-
 .delete-btn {
-    background-color: var(--red-color);
-    color: white;
-    cursor: pointer;
+  background-color: var(--red-color);
+  color: white;
+  cursor: pointer;
 }
 
 /* Dialog */
 
-dialog[open] { 
-    height: 400px;
-    width: 350px;
-    margin: auto;
-    border: 5px solid black;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 8px var(--blue-color);
+dialog[open] {
+  height: 400px;
+  width: 350px;
+  margin: auto;
+  border: 5px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px var(--blue-color);
 }
 
 dialog[open] form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
 }
 
-dialog[open] [type="text"], dialog[open] [type="number"] {
-    height: 25px;
-    padding: 5px;
-    width: 285px;
+dialog[open] [type="text"],
+dialog[open] [type="number"] {
+  height: 25px;
+  padding: 5px;
+  width: 285px;
 }
 
 dialog[open] #sub-btn {
-    background-color: var(--green-color);
-    color: white;
-    height: 30px;
-    width: 290px;
-    border-radius: 3px;
-    padding: 5px;
-    border: 1px solid #166534;
+  background-color: var(--green-color);
+  color: white;
+  height: 30px;
+  width: 290px;
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #166534;
 }
-
 
 dialog[open] #cancel-btn {
-    background-color: var(--red-color);
-    color: white;
-    height: 30px;
-    width: 290px;
-    border-radius: 3px;
-    padding: 5px;
+  background-color: var(--red-color);
+  color: white;
+  height: 30px;
+  width: 290px;
+  border-radius: 3px;
+  padding: 5px;
 }
 
-dialog[open] button:focus { 
-    outline: 1px solid black;
+dialog[open] button:focus {
+  outline: 1px solid black;
 }
-
 
 dialog[open] [for="user-read"] {
-    display: flex;
-    gap: 30px;
-    font-weight: 500;
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
 }
 
-dialog[open] .new-book { 
-    font-size: 28px;
-    font-weight: bold;
+dialog[open] .new-book {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+dialog[open] #error {
+  height: 25px;
+  padding: 5px;
+  width: 285px;
 }
